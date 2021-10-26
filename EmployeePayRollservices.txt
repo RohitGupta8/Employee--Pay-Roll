@@ -45,5 +45,18 @@ select *
  from employee_payroll 
  where salary > 40000;
 
+select *
+from employee_payroll
+where startDate between '2020-01-01' AND Date(now());
+
+-- UC6
+
+alter table employee_payroll add gender char(1) not null;
+update employee_payroll
+set gender = 'M'
+where id > 0;
+
+select * from employee_payroll;
+
 
 
