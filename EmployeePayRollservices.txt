@@ -39,4 +39,11 @@ values('Surbhi', 25000, '2020-10-10');
 select * from employee_payroll;
 
 
+-- UC5
+
+select *
+ from employee_payroll 
+ where salary > 40000;
+
+
 
