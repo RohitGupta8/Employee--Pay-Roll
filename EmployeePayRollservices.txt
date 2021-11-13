@@ -89,3 +89,10 @@ ALTER TABLE employee_payroll
 
 desc  employee_payroll;
 
+------UC-10
+
+ INSERT INTO employee_payroll(name, Department, gender, BasicPay, Deductions, TaxablePay, IncomeTax, NetPay, startDate) 
+VALUES ('Terisa','Sales','F',400000.0,70000.0,3000.0,1500.0,400200.0,'2020-01-27'),
+ ('Terisa','Marketing','F',500000.0,80500.0,3500.0,2500.0,400200.0,'2021-01-27');
+
+ select * from employee_payroll;
