@@ -52,14 +52,15 @@ where startDate between '2020-01-01' AND Date(now());
 -- UC6
 
 alter table employee_payroll add gender char(1) not null;
-update employee_payroll
-set gender = 'M'
-where id > 0;
+UPDATE employee_payroll set Gender = 'F' where name ='Rupali' or name = 'Sonali' or name = 'Surbhi';
+UPDATE employee_payroll set Gender = 'M' where name ='Rohit';
 
 select * from employee_payroll;
 
 -- UC-7
 
-select sum(salary) from employee_payroll
-Where gender = 'M' group by gender;
+ SELECT Gender, SUM(Salary) FROM employee_payroll GROUP BY Gender;
+SELECT Gender, AVG(Salary) FROM employee_payroll GROUP BY Gender;
+
+----Uc-8
 
