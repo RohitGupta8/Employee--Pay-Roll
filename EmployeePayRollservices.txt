@@ -75,3 +75,17 @@ SELECT Gender, COUNT(Salary) FROM employee_payroll GROUP BY Gender;
 ALTER TABLE employee_payroll CHANGE COLUMN Address Address  VARCHAR(250) DEFAULT 'TB';
 
 desc  employee_payroll;
+
+
+----- UC - 9
+
+ALTER TABLE employee_payroll RENAME COLUMN Salary TO BasicPay;
+
+ALTER TABLE employee_payroll
+   ->     ADD Deductions Double NOT NULL AFTER BasicPay,
+   ->     ADD TaxablePay Double NOT NULL AFTER Deductions,
+   ->     ADD IncomeTax Double NOT NULL AFTER TaxablePay,
+   ->     ADD NetPay Double NOT NULL AFTER IncomeTax;
+
+desc  employee_payroll;
+
