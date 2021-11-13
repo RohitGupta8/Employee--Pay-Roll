@@ -96,3 +96,27 @@ VALUES ('Terisa','Sales','F',400000.0,70000.0,3000.0,1500.0,400200.0,'2020-01-27
  ('Terisa','Marketing','F',500000.0,80500.0,3500.0,2500.0,400200.0,'2021-01-27');
 
  select * from employee_payroll;
+
+
+-------- UC-11
+
+ CREATE TABLE company( CompanyId INT PRIMARY KEY,
+    -> CompanyName VARCHAR(250) NOT NULL);
+
+
+ CREATE TABLE employee(Id INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,CompanyId INT REFERENCES company(CompanyId),Name VARCHAR(200) NOT NULL,PhoneNumber VARCHAR(20) NOT NULL,Address VARCHAR(50) NOT NULL DEFAULT 'DEFAULT',Gender CHAR(1) NOT NULL);
+
+
+ CREATE TABLE payroll(Id INT REFERENCES employee(Id),BasicPay DOUBLE NOT NULL,Deductions DOUBLE NOT NULL,TaxablePay DOUBLE NOT NULL,IncomeTax DOUBLE NOT NULL,Net_pay DOUBLE NOT NULL);
+
+
+CREATE TABLE department(DeptId INT PRIMARY KEY,DeptName VARCHAR(50) NOT NULL);
+
+
+ CREATE TABLE employee_Department(EmpId INT REFERENCES employee(Id),DeptId  INT REFERENCES department(DeptId));
+
+
+ show tables;
+
+
+
