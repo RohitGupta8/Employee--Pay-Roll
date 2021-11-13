@@ -119,4 +119,24 @@ CREATE TABLE department(DeptId INT PRIMARY KEY,DeptName VARCHAR(50) NOT NULL);
  show tables;
 
 
+-------- UC-12
+
+INSERT INTO company VALUES (1,"BridgeLabz");
+ select * from company;
+
+ INSERT INTO employee(CompanyId, Name, PhoneNumber, Address, Gender)
+ VALUES(11, 'Rohan', '7877789245', 'Jaipur', 'M' ),
+ (14, 'Terisa', '234565464', 'Banglore', 'F' ),
+(18, 'Rohit', '1237890', 'Delhi', 'M');
+
+ select * from employee;
+
+ INSERT INTO department VALUES(1,'Sales'),(2,'Marketing'),(3,'HR');
+ select * from department;
+
+ INSERT INTO payroll VALUES(1,6700,510,3500,500,10000),(2,7500,250,3500,400,3000),(3,9000,780,6500,980,3000);
+ select * from payroll;
+
+INSERT INTO employee_department VALUES(1,1),(2,2),(3,3);
+select * from employee_department;
 
