@@ -59,8 +59,19 @@ select * from employee_payroll;
 
 -- UC-7
 
- SELECT Gender, SUM(Salary) FROM employee_payroll GROUP BY Gender;
+SELECT Gender, SUM(Salary) FROM employee_payroll GROUP BY Gender;
 SELECT Gender, AVG(Salary) FROM employee_payroll GROUP BY Gender;
+SELECT Gender, MIN(Salary) FROM employee_payroll GROUP BY Gender;
+SELECT Gender, MAX(Salary) FROM employee_payroll GROUP BY Gender;
+SELECT Gender, COUNT(Salary) FROM employee_payroll GROUP BY Gender;
 
 ----Uc-8
 
+ ALTER TABLE employee_payroll
+    -> ADD PhoneNumber VARCHAR(250) AFTER Name,
+    -> ADD Address VARCHAR(250) AFTER PhoneNumber,
+    -> ADD Department VARCHAR(250) NOT NULL AFTER Address;
+
+ALTER TABLE employee_payroll CHANGE COLUMN Address Address  VARCHAR(250) DEFAULT 'TB';
+
+desc  employee_payroll;
